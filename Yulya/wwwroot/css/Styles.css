@@ -1,0 +1,414 @@
+
+html, form, .AllBlackout
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+  background:rgba(193, 184, 176, 1) ;
+      overflow-y: auto;
+      overflow-x: hidden;
+      min-width: 300px;
+}
+
+body{
+  height: auto;
+  transition: all 0.4s linear 0.0s;
+  margin: 0px;
+}
+*
+{
+  /* margin: 0;
+  padding: 0; */
+  font-family: 'Montserrat', sans-serif;
+  hyphens: auto;
+}
+
+.HeaderPanel
+{
+  height: 9.3vw;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: none;
+ /*background-image: url('../../Assets/Images/16x9Header.png');
+ background-repeat: no-repeat;
+ background-size: 100% 100%;*/
+ 
+}
+
+.HeaderLogoTable
+{
+  border-spacing: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+  .HeaderTableCellL
+{
+  vertical-align: middle;
+  text-align: left;
+  padding-left: 6vw;
+  width: 37vw;
+  height: 100%;
+  /* background-color: yellowgreen; */
+}
+
+  .HeaderTableCellR
+  {
+    vertical-align: middle;
+    text-align: center;
+    padding-right: 6vw;
+    width: 49.5vw;
+    min-width: 495px;
+    height: 100%;
+    /* padding: 5.1vw 0vw 0vw 0vw; */
+    /* background-color: gold; */
+  }
+
+.HeaderLogo
+{
+  height: auto;
+  width: auto;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 3.6em;
+  font-size: 3.0vw;
+  text-align: center;
+    user-select: none;
+    cursor: pointer;
+  background-color: transparent;
+  
+}
+.HeaderSubLogo
+{
+  height: auto;
+  width: auto;
+  font-weight: 300;
+  font-size: 1.4em;
+  font-size: 1.2vw;
+  letter-spacing: 0.8vw;
+  text-align: left;
+  padding-left: 3.3vw;
+    user-select: none;
+    cursor: pointer;
+  background-color: transparent;
+  
+}
+.HeaderMenu
+{
+  height: auto;
+  width: 100%;
+/* background-color: green; */
+}
+
+.Menu
+{
+  height: 100%;
+  width: fit-content;
+  float: right;
+  font-size: 1.4em;
+  font-size: 1.2vw;
+  font-weight: 300;
+  line-height: 55px;
+  color: black;
+}
+
+
+.MenuItem
+{
+  height: 100%;
+user-select: none;
+color: black;
+padding:0px 6px 0px 6px;
+position: relative;
+display: inline-block;
+cursor: pointer;
+border-radius: 4%;
+text-decoration: none;
+-webkit-user-drag: none;
+}
+.MenuItem:hover {
+  background-color: rgba(183, 174, 166, 1);}
+
+.MenuItem:hover .DropDownMenu
+{
+  display: block;}
+
+
+
+.MenuButtContainer
+{
+  display: none;
+  height: 90%;
+  width: 9vw;
+  float: right;
+ padding: 0;
+  /* background-color: red; */
+}
+.BackButton
+{
+  
+  height: 9vw;
+  width: 9vw;
+  background-color: transparent;
+  border: 0px;
+  border-radius: 50%;
+  padding: 0;
+  display: none;
+  outline: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  background-image: url('../../Images/back.png');
+}
+.BackButton:hover
+{
+
+  transform: scale(1.1);
+ }
+ .MenuButton
+{
+  height: 9vw;
+  width: 9vw;
+  margin-left: 2vw;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  display: none;
+  outline: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+background-image: url('../../Images/MenuButton.png');
+
+    /* background-color: rgb(55, 139, 132);  */
+}
+.MenuButton:hover
+{
+  transform: scale(1.1);
+  /* background-color: rgba(80,0,255,0.12); */
+}
+.MenuRightBlackout
+{
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right:0px;
+  background-color: rgba(0,0,0,0.5);
+  display: block;
+  opacity: 0;
+  user-select: none;
+  cursor: default;
+  z-index: 199;
+  transition: opacity 0.2s linear 0.0s;
+}
+.RightMenuContainer
+{
+display: none;
+position: fixed;
+top: 0px;
+right: -25vw;
+height: 100vh;
+width:0px;
+font-size: 2.1vw;
+  font-family: Roboto;
+  font-weight: 300;
+  overflow-y: auto;
+  
+background-color: #252525;
+z-index: 99;
+}
+
+.RightMenuItem , .RightMenuItemSelected 
+{
+  height: 5vw;
+  line-height: 5vw;
+  user-select: none;
+  padding:0px 9px 0px 9px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  border-radius: 4%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255,255,255,0.6);
+}
+.RightMenuItemSelected
+{
+  color: rgba(255,255,255,1);
+  background-color: #2c2c2c;
+}
+.SubMenuContainer
+{
+  height: 0vw;
+  overflow: hidden;
+}
+.RightSubMenuItem
+{
+
+  height: auto;
+  line-height: 2vw;
+  text-decoration: none;
+  padding:0px 0px 0px 35px;
+  margin-top: 2vw;
+  display: block;
+ cursor: pointer;
+ user-select: none;
+    width: auto;
+    overflow: hidden;
+    white-space: normal;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+}
+.RightMenuItem:hover, .RightSubMenuItem:hover
+{
+  color: rgba(255,255,255,1);
+  background-color: #2c2c2c;
+}
+
+@media screen and (max-width:1024px)
+{
+  .HeaderPanel
+{
+  height: 10vw;
+}
+.HeaderLogo
+{
+  font-size: 2em;
+  font-size: 3.0vw;
+}
+}
+
+@media screen and (max-width:800px)
+{
+  .html, form
+  {
+        overflow-y: hidden;
+  }
+  .HeaderPanel
+  {
+    height: 13vw;
+  }
+  .MenuButtContainer
+  {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    float: right;
+    height: 70%;
+    width: auto;
+    /* padding: 0vw 4vw 0vw 0vw; */
+    margin: 0;
+  }
+  .HeaderTableCellL
+ {
+   /* padding-right: 4vw; */
+ }
+.HeaderTableCellR
+ {
+  width: 20vw;
+  min-width: 0;
+  padding-right: 6vw;
+}
+.HeaderMenu
+  {
+    margin-left: 1vw;
+    visibility:hidden;
+    display: none;
+  }
+  .Menu
+  {
+    width: 0;
+    height: 0;
+    
+  }
+  .MenuButton
+  {
+    display: block;
+    visibility: visible;
+  }
+
+.HeaderName {
+  font-size: 12px;
+  left: 68px;
+  margin-top: -13px;
+  margin-left: 0px;
+  width: 120px;
+}
+.HeaderLogo
+{
+  font-size: 1.3em;
+    font-size: 4.6vw;
+}
+.HeaderSubLogo 
+{
+  padding-left: 4.7vw;
+  font-size: 1.3em;
+  font-size: 2.6vw;
+}
+.RightMenuContainer
+{
+  display: block;
+  font-size: 1.3em;
+  font-size: 2.6vw;
+}
+.RightMenuItem , .RightMenuItemSelected 
+{
+  height: 10vw;
+  line-height: 10vw;
+}
+.RightSubMenuItem
+{
+  line-height: 4.5vw;
+}
+
+}
+@media screen and (max-width:455px)
+{
+  .HeaderPanel
+  {
+    height: 16vw;
+  }
+  .MenuButtContainer
+  {
+    height: auto;
+  }
+
+
+.HeaderLogo
+  {
+    top: 0px;
+    left: 0vw;
+    font-size: 1.2em;
+    font-size: 5.5vw;
+  }
+  .HeaderSubLogo 
+{
+  padding-left: 5.6vw;
+  font-size: 0.76em;
+  font-size: 3.4vw;
+}
+.RightMenuContainer
+{
+  font-size: 0.76em;
+  font-size: 3.4vw;
+}
+.RightMenuItem , .RightMenuItemSelected 
+{
+  height: 12vw;
+  line-height: 12vw;
+}
+}
+@media screen and (max-height:455px)
+{  .HeaderSubLogo 
+  {
+    padding-left: 4.7vw;
+  }
+}

@@ -1,0 +1,84 @@
+body
+{
+    background:rgba(193, 184, 176, 1) ;
+}
+.LoginFormDiv
+{
+    position: absolute;
+    top: 35vh;
+    left: 42vw;
+}
+.ClientErrorDiv
+{
+    position: absolute;
+    top: 35vh;
+    width: 100%;
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.NameLabel
+{
+    text-align: center;
+    font-size: 2vw;
+} 
+
+.PassLabel
+{
+    text-align: center;
+    font-size: 2vw;
+}
+.NameField, .PassField
+{
+    font-size: 2vw;
+}
+
+.LoginButton
+{
+    width: 100%;
+    padding: 1vh;
+    text-align: center;
+    font-size: 2vw;
+    background:rgba(255, 255, 255, 0.4) ;
+    border-radius: 50vh;
+    margin-top: 3vh;
+    outline: none;
+}
+@media screen and (max-width:800px)
+{
+    .LoginFormDiv
+    {
+        left: 32vw;
+    }
+    .NameLabel
+    {
+        font-size: 4vw;
+    } 
+    .PassLabel
+    {
+        font-size: 4vw;
+    }
+    .NameField, .PassField
+    {
+        font-size: 4vw;
+    }
+}
+@media screen and (max-width:455px)
+{
+    .LoginFormDiv
+    {
+        left: 21vw;
+    }
+    .NameLabel
+    {
+        font-size: 6vw;
+    } 
+    .PassLabel
+    {
+        font-size: 6vw;
+    }
+    .NameField, .PassField
+    {
+        font-size: 6vw;
+    }
+}

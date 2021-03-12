@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Yulya>
+  <menu name="Меню">
+    <menuitem link="">ГЛАВНАЯ</menuitem>
+    <menuitem link="Portfolio">ПОРТФОЛИО</menuitem>
+    <menuitem link="Projects">ПРОЕКТЫ</menuitem>
+    <menuitem link="ClientsInfo">КЛИЕНТАМ</menuitem>
+    <menuitem link="AboutMe">ОБО МНЕ</menuitem>
+    <menuitem link="Contacts">КОНТАКТЫ</menuitem>
+  </menu>
+  <MainPage name="Главная">
+    <MainPageButton id="0" name="ПОРТФОЛИО" url="Portfolio" ImgUrl="Images/MainPage/Portfolio.jpg" />
+    <MainPageButton id="1" name="ПРОЕКТЫ" url="Projects" ImgUrl="Images/MainPage/Projects.jpg" />
+    <MainPageButton id="2" name="ОБО МНЕ" url="AboutMe" ImgUrl="Images/MainPage/1.jpg" />
+  </MainPage>
+  <Portfolio name="Портфолио">
+    <gallery id="1" name="От Петроградки до Финского" description="" url="FromPetrogradkaToFinskiy" ImgUrl="Images/Portfolio/ButtonsImages/1.jpg" ImgFolder="Images/Portfolio/1/" />
+    <gallery id="0" name="Портреты для Катерины" description="" url="ПотретыДляКатерины" ImgUrl="Images/Portfolio/ButtonsImages/0.jpg" ImgFolder="Images/Portfolio/0/" />
+  </Portfolio>
+  <Projects name="Проекты">
+    <gallery id="0" name="Бася" description="Про мою взрослеющую дочь. Про время, утекающее сквозь пальцы." url="Basya" ImgUrl="Images/Projects/ButtonsImages/5.jpg" ImgFolder="Images/Projects/0/"></gallery>
+  </Projects>
+  <InformationForClients name="Для клиентов">
+    <mainheader>Я фотографирую людей) Больших и совсем маленьких, в кругу родных и любимых,
+      дома, в студии, на улице и в роддоме, в Санкт-Петербурге и его окресностях.</mainheader>
+    <block id="0">
+      <header>В стоимость портретной, семейной съёмки, съёмки беременности входит:</header>
+      <text>помощь в подборе места места проведения съёмки и рекомендации по внешнему виду,
+          /продолжительность съёмки - от одного часа,
+          /40 фотографий в обработке(цвето и светокоррекция, лёгкая ретушь крупных планов);
+          /аренда выбранной студии на один час,
+          /готовность фотографий - 14 дней, фото передаются в электронном виде через файлообменник.</text>
+      <price>Стоимость съёмки - от 9000 рублей.</price>
+      <image>Images/InformationForClients/family.jpg</image>
+    </block>
+    <block id="1">
+      <header>Домашняя фотосъёмка новорожденных включает в себя:</header>
+      <text>рекомендации по внешнему виду для всех участников съёмки,
+          /продолжительность съёмки - до двух часов со всеми необходимыми перерывами,
+          /40 фотографий в обработке(цвето и светокоррекция, лёгкая ретушь крупных планов);
+          /возможность самостоятельно выбрать фото на обработку
+          /готовность фотографий - 14 дней, фото передаются в электронном виде через файлообменник,
+          /полиграфическая фотокнига 20*20 на 24 страницы(срок изготовления 1 месяц).</text>
+      <price>Стоимость съёмки - от 9000 рублей.</price>
+      <image>Images/InformationForClients/baby.jpg</image>
+    </block>
+    <block id="2">
+      <header>Абонемент на съемку</header>
+      <text>Для тех, кто фотографируется много. Для того, чтобы те, кто фотографируется много, получили самое выгодное предложение)
+          /4 часовые или 4 двухчасовые съемки в течении одного календарного года;
+          /в студии, на улице или у вас дома;
+          /возможность проводить съемки всей семьей или индивидуально;
+          /возможность со скидкой заказать фотокнигу после каждой съемки, или по результатам всех съемок со скидкой 15%.</text>
+      <price>Стоимость съёмки - от 30000 рублей.</price>
+      <image>Images/InformationForClients/aboniment.jpg</image>
+    </block>
+    <block id="3">
+      <header>Подарочный сертификат</header>
+      <text>Оформляется на любой вид съемки, оплачивается полностью при оформлении, не имеет срока годности).</text>
+      <price></price>
+      <image>Images/InformationForClients/sertificate.jpg</image>
+    </block>
+  </InformationForClients>
+  <AboutMe name="Обо мне">
+    <mainheader>Рада приветствовать вас на моем сайте!
+  Меня зовут Кондратова Юлия. Я профессиональный фотограф, работаю в Санкт-Петербурге и за его пределами. Уже более 6 лет я занимаюсь коммерческой фотографией, у меня большой опыт съемок детей, в том числе и новорожденных, и их родителей, так же я провожу портретные фотосессии. Меня можно пригласить на съемку к вам домой, в фотостудию или на прогулку по нашему красивому городу. Я снимаю простые и дорогие сердцу фотографии о настоящем)</mainheader>
+    <block id="0">
+      <header>Выставки и награды:</header>
+      <text>В 2017 году участник международной фотовыставки премии BICFP «Говорю о важном» в ГДЗ «Меридиан» (г. Москва);
+      /В 2018 году — фотовыставка «Моя вселенная» в Общественной палате РФ (г. Москва);
+      /В 2019 году — фотовыставка «Связь поколений» в ГДЗ «Меридиан» (г. Москва);
+      /В сентябре 2020 вышло мое небольшое интервью на странице сайта Couturebook.
+      </text>
+      <price></price>
+      <image>Images/AboutMe/AboutMe.jpg</image>
+    </block>
+  </AboutMe>
+  <Contacts name="Контакты">
+    <mainheader>Я с радостью отвечу на все ваши вопросы!</mainheader>
+    <subheader>Связаться со мной можно:</subheader>
+    <image>Images/Contacts/AboutMecopy1.jpg</image>
+    <row>
+      <link id="0" image="Images/Contacts/whatsappSqr250.png" link="https://api.whatsapp.com/send?phone=79112471887">WhatsApp</link>
+      <link id="1" image="Images/Contacts/viber-iconSqr256.png" link="viber://chat?number=%2b79112471887">Viber</link>
+      <link id="2" image="Images/Contacts/" link="tel:+79112471887">+7(911)247-18-87</link>
+    </row>
+    <row>
+      <link id="3" image="Images/Contacts/" link="mailto: kondratovaphoto@mail.ru">kondratovaphoto@mail.ru</link>
+    </row>
+  </Contacts>
+</Yulya>

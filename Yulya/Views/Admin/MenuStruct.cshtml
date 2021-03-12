@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+<link type="text/css" rel="stylesheet" href="~/css/adminMain.css" />
+@using (Html.BeginForm("menu", "Admin"))
+{
+    <table class="StructContentTable">
+        <tbody id="sortable">
+            @foreach (Menu menuitem in (IEnumerable<Menu>)ViewData["AdminMenuButtons"])
+            {
+                <tr draggable="true">
+                    <td>
+                        <table class="StructContentRaw" >
+                            <tr class="Unsortable">
+                                <td><div class="AdminPageLabel">Название пункта меню:</div></td>
+                                <td>
+                                    <input type="text" class="MainTextInput" name="menuitems" value="@menuitem.name" />
+                                </td>
+                                <td><div class="AdminPageLabel">Ссылка:</div></td>
+                                <td>
+                                    <input readonly="readonly" type="text" style="background-color:lightgrey" class="MainTextInput" name="menulinks" value="@menuitem.link" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                }
+            </tbody>
+    </table>
+    <input type="submit" value="Сохранить" class="SubmitButton" />
+}

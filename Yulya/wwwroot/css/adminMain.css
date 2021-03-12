@@ -1,0 +1,57 @@
+
+
+.StructContentRaw
+{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-spacing: 0px;
+    margin-bottom: 1vh;
+    border: solid 1px;
+}
+.MainColumn1
+{
+width: 5%;
+}
+.MainColumn2
+{
+    width: 70%;
+}
+.MainColumn3
+{
+    width: 25%;
+}
+.StructHeaderCell
+{
+    font-size: 2vw;
+    border: solid 1px black;
+    width: 100%;
+}
+.StructContentText
+{
+    font-size: 1.5vw;
+    width: 100%;
+    word-wrap: break-word;
+    height: auto;
+    resize: none;
+}
+.StructContentImg
+{
+height: 15vh;
+}
+.MainTextInput
+{
+        font-size: 1.2vw;
+        width: 95%;
+        display: block;
+        margin: auto;
+        resize: vertical;
+}
+
+
+@media screen and (max-width:800px)
+{
+   
+}
+@media screen and (max-width:455px)
+{
+
+}

@@ -1,0 +1,4 @@
+User-agent: *
+
+Host: www.kondratovaphoto.ru  
+Sitemap: https://kondratovaphoto.ru/Sitemap.xml

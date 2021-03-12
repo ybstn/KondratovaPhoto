@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+<link type="text/css" rel="stylesheet" href="~/css/adminClientsInfo.css" />
+<form asp-action="AboutMe" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <table class="ClinetInfoTable">
+        <thead>
+            <tr class="ClinetInfoTableRawMain">
+                <td colspan="3">
+                    <div class="AdminPageLabel">Основной заголовок:</div>
+                    <textarea class="ClientInfoTextInputMain" name="PageHeader">@ViewData["AdminClientsInfoMainHeader"]</textarea>
+                </td>
+            </tr>
+        </thead>
+        <tbody id="sortable">
+
+            @foreach (AboutMeContent AboutMeItem in (IEnumerable<AboutMeContent>)ViewData["AdminAboutMeContent"])
+            {
+                <tr draggable="true">
+                    <td>
+
+
+                        <table class="ClinetInfoTableRaw">
+                            <tr class="Unsortable">
+                                <td class="ClientInfoColumn1" style="border-right:solid 1px;">
+                                    <div class="AdminPageLabel">Удалить:</div>
+                                </td>
+                                <td class="ClientInfoColumn2">
+                                    <div class="AdminPageLabel">Заголовок:</div>
+                                </td>
+                                <td class="ClientInfoColumn3" rowspan="3">
+                                    <img class="FileInputImage" asp-append-version="true" src="/@AboutMeItem.imgThumb" />
+                                </td>
+                            </tr>
+                            <tr class="Unsortable">
+                                <td class="ClientInfoColumn1" style="border:solid 1px; border-top:none; border-left:none">
+                                    <input type="image" onclick="return confirmDeleteAboutMe();" class="DeleteElementButton" src="/Images/DeleteImgFromGalleryButt_Small.png" asp-action="AboutMe" asp-route-actionName="delete" asp-route-id="@AboutMeItem.id" alt="Удалить" />
+                                    <input type="hidden" name="OnPageItemIDs" value="@AboutMeItem.id" />
+                                </td>
+                                <td class="ClientInfoColumn2">
+                                    <textarea rows="1" class="ClientInfoTextInput" name="CustomHeaders">@AboutMeItem.header</textarea>
+                                </td>
+                            </tr>
+                            <tr class="Unsortable">
+                                <td>
+                                    <div class="AdminPageLabel">Текст:</div>
+                                </td>
+                                <td>
+                                    <textarea rows="4" class="ClientInfoTextInputMain" name="CustomTexts">@AboutMeItem.textString</textarea>
+                                </td>
+                            </tr>
+                            <tr class="Unsortable">
+                                <td>
+                                    <div class="AdminPageLabel">Подпись:</div>
+                                </td>
+                                <td>
+                                    <textarea rows="1" type="text" class="ClientInfoTextInput" name="CustomPrices">@AboutMeItem.price</textarea>
+                                </td>
+                                <td>
+                                    <input type="file" accept="image/jpeg,image/png" class="FileInput" name="uploadedFile" />
+                                    <input type="submit" class="FileInputSubmitButt" asp-action="AboutMe" asp-route-id="@AboutMeItem.id" value="Загрузить" />
+                                    <input type="hidden" name="CustomImage" value="@AboutMeItem.img" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <input type="submit" onclick="return AddButtonPressed();" asp-action="AboutMe" asp-route-actionName="add" value="Добавить блок" class="AddButton" />
+    <input type="submit" value="Сохранить" class="SubmitButton" />
+    <input type="hidden" id="scroll_position" name="scroll_position" value="@ViewData["scroll_position"]" />
+</form>
