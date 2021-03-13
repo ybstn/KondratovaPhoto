@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Yulya.Models
+
+<link type="text/css" rel="stylesheet" href="~/css/MainStyles.css" />
+<div class="MainPanel">
+
+    @foreach (MainPage mainButtons in (IEnumerable<MainPage>)ViewData["MainButtons"])
+    {
+
+        <div class="ServiceGroupContainer" onmouseup="location.href='@mainButtons.url'">
+            <img class="ServiceGroupImg" asp-append-version="true" src="@mainButtons.img" alt="@mainButtons.name" />
+            <div class="ServiceGroupBlckout"></div>
+            <div class="ServiceGroupLabel">@mainButtons.name</div>
+        </div>
+    }
+</div>
+

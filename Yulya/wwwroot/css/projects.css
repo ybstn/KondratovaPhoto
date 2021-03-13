@@ -1,0 +1,37 @@
+.MainPanel
+{
+  height: 100vh;
+  width: 100%;
+  background-color:rgb(87, 81, 81);
+ 
+  position: relative;
+  z-index: 10;
+}
+.ProjectsMainDiv
+{
+position: relative;
+top: 40vh;
+text-align: center;
+font-weight: 300;
+font-size: 46pt;
+font-size: 3.2vw;
+}
+
+@media screen and (max-width:800px)
+{
+    .ProjectsMainDiv
+    {
+    font-size: 46pt;
+    font-size: 5.2vw;
+    }
+}
+
+@media screen and (max-width:455px)
+{
+    .ProjectsMainDiv
+    {
+    font-size: 46pt;
+    font-size: 5.2vw;
+    }
+  
+}

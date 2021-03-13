@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+@using Yulya.Models
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>kondratovaphoto.ru</title>
+    <meta property="og:title" content="kondratovaphoto.ru" />
+    <meta property="og:description" content="Семейный и портретный фотограф в Санкт-Петербурге Кондратова Юлия, услуги профессиональной фотосъемки в роддоме." />
+    <meta property="og:image" content="~/Images/OpenGraphIMG.jpg">
+    <meta property="vk:image" content="~/Images/OpenGraphIMG.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kondratovaphoto.ru/" />
+    <link rel="alternate" href="http://kondratovaph-ru.1gb.ru/" hreflang="ru" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no" />
+    <meta name="description" content="Семейный и портретный фотограф в Санкт-Петербурге Кондратова Юлия, услуги профессиональной фотосъемки в роддоме." />
+    <meta name="keywords" content="фотограф спб, семейная фотосессия, фотосессия портрет, портретная фотосессия спб, фотосессия беременности, фотосъемка родов, фотосъемка беременности, родов и новорожденных" />
+    <meta name="copyright" content="(c)kondratovaphoto">
+    <meta name="author" content="YBSTN" />
+    <meta name="language" content="Russian" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Images/favicon-16x16.png">
+    <link rel="manifest" href="~/site.json">
+    <meta name="msapplication-config" content="~/browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#c1b8b0">
+    <meta name="theme-color" content="#c1b8b0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159394745-1"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-159394745-1');</script>
+    <meta name="yandex-verification" content="4146a4b1df3cd6e8" />
+</head>
+<body>
+    <link rel="stylesheet" href="~/css/Styles.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <div class="AllBlackout" id="AllBlackout">
+
+
+
+        <header class="HeaderPanel">
+            <table runat="server" class="HeaderLogoTable">
+                <tr>
+
+                    <td class="HeaderTableCellL">
+                        <div runat="server" class="HeaderLogo" onmouseup="ServiceGroupMouseUP()">Кондратова Юлия</div>
+                        <div runat="server" class="HeaderSubLogo" onmouseup="ServiceGroupMouseUP()">kondratovaphoto</div>
+                    </td>
+                    <td class="HeaderTableCellR">
+                        <div class="HeaderMenu">
+                            <nav class="Menu">
+                                @foreach (Menu menuitem in (IEnumerable<Menu>)ViewData["MenuButtons"])
+                                {
+
+                                    <a class="MenuItem" href="/@menuitem.link">@menuitem.name</a>
+                                }
+                            </nav>
+                        </div>
+                        <div runat="server" class="MenuButtContainer">
+                            <div class="BackButton" onmouseup="BackButtMouseUp()"></div>
+                            <div class="MenuButton" onmousedown="MenuButtMouseDown()" onmouseup="MenuButtMouseUp()"></div>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </header>
+        <main>
+            <div runat="server" id="MenuRightBlackout" class="MenuRightBlackout" onmouseup="RightMenuBlackoutMouseUp()">
+                <nav class="RightMenuContainer">
+                    @foreach (Menu menuitem in (IEnumerable<Menu>)ViewData["MenuButtons"])
+                    {
+                        <a class="RightMenuItem" href="/@menuitem.link">@menuitem.name</a>
+                    }
+                </nav>
+            </div>
+            @RenderBody()
+        </main>
+        @RenderSection("footer", required: false)
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Main.js" asp-append-version="true"></script>
+</body>
+</html>

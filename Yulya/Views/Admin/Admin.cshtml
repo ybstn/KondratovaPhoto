@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+@using Yulya.Models
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="~/css/admin.css" />
+    <table class="AdminPanel">
+        <tr>
+            <td class="SiteStructPanel">
+                <div class="StructLabel">Страницы:</div>
+                @foreach (string SiteStruct in (IEnumerable<string>)@ViewData["AdminSiteStruct"])
+                {
+                    if (SiteStruct != "")
+                    {
+                        <input id="@SiteStruct" type="button" class="StructButton" value="@SiteStruct" />
+                    }
+                }
+
+            </td>
+            <td id="StructContentPlaceholder" class="StructContent">
+                Добро пожаловать на страницу администратора
+            </td>
+        </tr>
+        
+    </table>
+    <script src="~/js/Admin.js"></script>

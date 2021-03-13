@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Yulya.Models
+
+<link type="text/css" rel="stylesheet" href="~/css/portfolioGallery.css" />
+<div class="MainPanel">
+
+
+    <div class="GalleryPanel">
+        <div class="GalleryMasterDiv">
+
+            <div class="GallerySlideContainer" onmousedown="javascript:return ImageMouseDown(event,0)">
+                <img class="GallerySlideImg" asp-append-version="true" src="@ViewData["ProjectsGalleryLastPhoto"]" />
+                <div class="GallerySlideBlckout"></div>
+            </div>
+
+            @foreach (ProjectsGalleryContent ProjectsService in (IEnumerable<ProjectsGalleryContent>)ViewData["ProjectsGalleryContent"])
+            {
+
+                <div class="GallerySlideContainer" onmousedown="javascript:return ImageMouseDown(event,@ProjectsService.index)">
+                    <img class="GallerySlideImg" asp-append-version="true" src="@ProjectsService.ImgUrl" />
+                    <div class="GallerySlideBlckout"></div>
+                </div>
+
+            }
+
+
+            <div class="GallerySlideContainer" onmousedown="javascript: return ImageMouseDown(event,@ViewData["ProjectsGalleryLastImageIndex"])">
+                <img class="GallerySlideImg" asp-append-version="true" src="@ViewData["ProjectsGalleryFirstPhoto"]" />
+                <div class="GallerySlideBlckout"></div>
+            </div>
+
+        </div>
+        <div class="CloseGallery" onmouseup="CloseGallery()">
+            <img class="CloseGalleryImg" asp-append-version="true" src="/Images/backWhite.png" />
+        </div>
+        <div class="PrevButtonDiv" onmousedown="PrevImgSliderDwn()" onmouseup="PrevImgSliderUp()">
+            <img class="PrevButtonImg" asp-append-version="true" src="/Images/PrevSlideButt.png" />
+        </div>
+        <div class="NextButtonDiv" runat="server" onmousedown="NextImgSliderDwn()" onmouseup="NextImgSliderUp()">
+            <img class="NextButtonImg" asp-append-version="true" src="/Images/NextSlideButt.png" />
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/ImgSlider.js"></script>
+</div>
+

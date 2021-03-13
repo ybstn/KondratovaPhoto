@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+<link type="text/css" rel="stylesheet" href="~/css/adminPortfolio.css" />
+<form asp-action="Portfolio" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <table class="PortfolioTable">
+        <tbody id="sortable">
+            @foreach (Projects Projectsitem in (IEnumerable<Projects>)ViewData["AdminProjectsContent"])
+            {
+                <tr draggable="true">
+                    <td>
+                        <table class="PortfolioTableRaw">
+                            <tr class="Unsortable">
+                                <td class="PortfolioColumn1"><div class="AdminPageLabel">Удалить альбом:</div></td>
+                                <td class="PortfolioColumn2"><div class="AdminPageLabel">Подпись под альбомом на странице проектов:</div></td>
+                                <td class="PortfolioColumn3"><div class="AdminPageLabel">Название страницы в строке браузера:</div></td>
+                                <td class="PortfolioColumn4"><div class="AdminPageLabel">Обложка альбома:</div></td>
+                            </tr>
+                            <tr class="Unsortable">
+                                <td id="@Projectsitem.index">
+                                    <input type="image" onclick="return confirmDelete();" class="DeleteElementButton" src="/Images/DeleteImgFromGalleryButt_Small.png" asp-action="Portfolio" asp-route-actionName="delete" asp-route-id="@Projectsitem.id" alt="Удалить" />
+                                    <input type="hidden" name="PortolioItemID" value="@Projectsitem.id" />
+                                </td>
+                                <td>
+                                    <textarea rows="1" class="PortfolioTextInput" name="PortolioItemName">@Projectsitem.name</textarea>
+                                </td>
+                                <td>
+                                    <input type="text" class="PortfolioTextInput" name="PortolioItemUrl" value="@Projectsitem.url" />
+                                </td>
+                                <td rowspan="4">
+                                    <img src="/@Projectsitem.imgThumb" asp-append-version="true" class="FileInputImage" />
+                                </td>
+                            </tr>
+                            <tr class="Unsortable">
+                                <td class="PortfolioColumn1"><div class="AdminPageLabel">Описание альбома:</div></td>
+                                <td colspan="2">
+                                    <textarea rows="1" class="PortfolioTextInput" name="PortolioItemDescription">@Projectsitem.description</textarea>
+                                </td>
+                            </tr>
+                            <tr class="Unsortable">
+                                <td colspan="3" class="PortfolioColumn">Фотографии:</td>
+                            </tr>
+                            <tr class="Unsortable">
+                                <td colspan="3">
+                                    <div class="SmallGallery">
+                                        @{int DeleteImgButtonID = 0;}
+                                        @foreach (string PortfolioGallery in Projectsitem.gallery)
+                                        {
+                                            <div class="DeleteGalleryImageButtonContainer">
+                                                <input type="submit" onclick="return confirmDelete();" class="DeleteGalleryImageButton" asp-action="Portfolio" asp-route-actionName="deleteItem" asp-route-id="@Projectsitem.id" asp-route-DelItemID="@DeleteImgButtonID" alt="Удалить" />
+                                                <img src="/@PortfolioGallery" asp-append-version="true" class="FolderImages" />
+
+                                            </div>
+                                            DeleteImgButtonID++;
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="Unsortable">
+
+                                <td colspan="3">
+                                    <input type="file" multiple accept="image/jpeg, image/png" class="FileInput" name="uploadedFiles" />
+                                    <input type="submit" class="FileInputSubmitButt" asp-action="Portfolio" asp-route-id="@Projectsitem.id" value="Загрузить" />
+                                    <input type="hidden" name="PortolioItemFolder" value="@Projectsitem.imgfolder" />
+                                </td>
+                                <td style="text-align:center">
+                                    <input type="file" accept="image/jpeg,image/png" class="FileInput" name="uploadedFile" />
+                                    <input type="submit" class="FileInputSubmitButt" asp-action="Portfolio" asp-route-id="@Projectsitem.id" value="Загрузить" />
+                                    <input type="hidden" name="PortolioItemImage" value="@Projectsitem.img" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <input type="submit" onclick="return AddButtonPressed();" asp-action="Portfolio" asp-route-actionName="add" value="Добавить альбом" class="AddButton" />
+    <input type="submit" value="Сохранить" class="SubmitButton" />
+    <input type="hidden" name="pageName" value="Projects" />
+    <input type="hidden" id="scroll_position" name="scroll_position" value="@ViewData["scroll_position"]" />
+</form>

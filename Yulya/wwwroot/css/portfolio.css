@@ -1,0 +1,304 @@
+.MainPanel
+{
+  height: 100%;
+  /* height: auto; */
+  width: 100%;
+  background-color:transparent;
+  display: flex;
+  align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  position: relative;
+  z-index: 10;
+  transition: right 0.2s linear 0.0s;
+}
+
+.PortfolioServiceContainer
+{
+    opacity: 1;
+    width: 46vw;
+    height: 65vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    margin: 0vw 0vw 3vw 0vw;
+}
+.PortfolioServiceBlckout
+{
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s linear 0.1s;
+    background: rgba(0, 0,0, 0.6);
+  display: block;
+  opacity: 0;
+    user-select: none;
+  cursor: default;
+}
+.PortfolioServiceImg
+{
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+  /* position: absolute;
+  top:3vw; */
+}
+
+.PortfolioServiceLabel
+{
+    /* position: absolute;
+    top: 0vw; */
+    font-size: 19pt;
+    font-size: 1.2vw;
+    font-weight:400;
+   text-transform: uppercase;
+    color: #000000;
+    text-align: center;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    /* z-index: 5; */
+    user-select: none;
+    cursor: default;
+}
+.PortfolioDescriptionLabel
+{
+  font-size: 19pt;
+  font-size: 1.2vw;
+  font-weight: 200;
+  color: #000000;
+  text-align: center;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  /* z-index: 5; */
+  user-select: none;
+  cursor: default;
+}
+.PortfolioServiceMasterDiv
+{
+  display:  block;
+  height: 50%;
+  transition: all 0.2s ease;
+}
+
+.ServiceSlideContainer
+{
+ position: relative;
+transition: all 0.6s ease-in-out 0.0s;
+ height: 100%;
+width: 100%;
+
+display: inline-block;
+
+border: none;
+text-align: center;
+
+
+cursor: -webkit-grab;
+cursor: grab;
+user-select: none;
+
+}
+.SlideLayoutTable
+{
+width: 100%;
+height: 100%;
+table-layout: fixed;
+empty-cells: show;
+}
+.ServiceTextHeader
+{
+ line-height: 5.5vh;
+  width: 100%;
+  white-space: pre-line;
+  height: auto;
+  display: block;
+  font-size: 19pt;
+    font-size: 1.2vw;
+font-weight: 300;
+text-transform: uppercase;
+}
+.ServiceTextDiv
+{
+  margin-top: 1vh;
+  white-space: pre-line;
+  display: block;
+ font-weight: 200;
+ font-size: 19pt;
+ font-size: 1.2vw;
+}
+.ServiceText
+{
+width: 100%;
+display: block;
+text-align: center;
+}
+
+.ServiceImageDiv
+{
+  height: 70%;
+  width: 100%;
+  display: block;
+
+background-repeat: no-repeat;
+background-position-x: center;
+background-position-y: center;
+background-size: contain;
+}
+.ServiceImg
+{
+  height: auto;
+  max-width: 100%;
+ 
+}
+.SlideLayoutTableRawTwo
+  {
+    display: none;
+  }
+  .SlideLayoutTableRawOne
+  {
+    height: 100%;
+
+  }
+  .TableCellText
+  {
+    padding-left: 3vw;
+    height: -moz-fit-content;
+  }
+
+@media screen and (max-width:800px)
+{
+  /* описание backbutton в styles.css */
+  /* .BackButton
+  {
+    display: block;
+    visibility: visible;
+  } */
+  .MainPanel
+{
+  align-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+  .PortfolioServiceBlckout
+{
+   
+}
+.PortfolioServiceContainer
+{
+  width: 70.5%;
+  height: 42vh;
+}
+.PortfolioServiceLabel 
+{
+  font-size: 1.3em;
+  font-size: 2.6vw;
+}
+.PortfolioDescriptionLabel
+{
+  font-size: 1.3em;
+  font-size: 2.6vw;
+}
+.PortfolioServiceImg {
+  top: 5vw;
+}
+  .SlideLayoutTableRawOne
+  {
+    height: fit-content;
+    height: -moz-fit-content;
+
+  }
+  .SlideLayoutTableRawTwo
+  {
+    display: table-row;
+
+  }
+  .TableCellText
+  {
+   
+  }
+  .TableCellPicRight
+  {
+  
+  display: none;
+  }
+  .TableCellPicDown
+  {
+
+  display: table-cell;
+  }
+  .ServiceSlideContainer
+  {
+
+  }
+  .ServiceTextDiv
+  {
+    height: 100%;
+  width: 100%;
+  display: block;
+  margin-left: 0;
+  }
+
+
+
+}
+@media screen and (max-width:455px)
+{
+  .PortfolioServiceContainer
+{
+    width: 75.9%;
+    height: 42vh;
+    margin: 0vw 0vw 8vw 0vw;
+}
+.PortfolioServiceLabel {
+  font-size: 0.76em;
+  font-size: 3.4vw;
+}
+.PortfolioDescriptionLabel
+{
+  font-size: 0.76em;
+  font-size: 3.4vw;
+}
+.PortfolioServiceImg
+{
+  top: 8vw;
+}
+
+}
+@media screen and (max-height:455px)
+{
+  .MainPanel
+{
+  align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+  .PortfolioServiceContainer
+  {
+    width: 43.5%;
+      height: 68vh;
+      margin: 0vw 0vw 6vw 0vw;
+  }
+  .PortfolioServiceLabel {
+    font-size: 1.3em;
+    font-size: 2.6vw;
+  }
+  .PortfolioServiceImg
+  {
+    top: 6vw;
+  }
+ 
+}
